@@ -28,9 +28,9 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+      
   2. Which of the two uses a closure? How can you tell?
-  
+
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
 */
@@ -44,10 +44,8 @@ function counterMaker() {
 }
 
 const counter1 = counterMaker();
-
 // counter2 code
 let count = 0;
-
 function counter2() {
   return count++;
 }
@@ -61,10 +59,9 @@ Use the inning function below to do the following:
   For example: invoking inning() should return a numerical score value of 0, 1, or 2
 */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+function inning(points){
+  points = Math.random()*2;
+  return points;
 }
 
 /* Task 3: finalScore()
