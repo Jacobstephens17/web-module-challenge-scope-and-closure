@@ -58,11 +58,12 @@ Use the inning function below to do the following:
   NOTE: You will be using this function over and over again in the tasks below
   For example: invoking inning() should return a numerical score value of 0, 1, or 2
 */
-
 function inning(points){
-  points = Math.random()*2;
+  points = Math.round(Math.random()*2);
   return points;
 }
+
+
 
 /* Task 3: finalScore()
 Use the finalScore function below to do the following:
@@ -77,20 +78,38 @@ For example: invoking finalScore(inning, 9) might return this object:
 }
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(inningCB){
+  var inningCB = inning;
+  return {
+    Home: inningCB(inning),
+    Away: inningCB(inning),
+  }
 }
+
+
 
 /* Task 4: 
 // create a function called getInningScore 
 // the function should take the inning function as an argument 
 // it should return an object with with a score for home and a score for away that that populates from invoking the inning callback. */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inningCB, ){
+  let inningScoreTotal = [];
+  let homeScore = 0;
+  let awayScore = 0;
+  for(let i = 0; i < 9; i ++){
+    let currentScore = finalScore();
+    homeScore = currentScore + finalScore.Home;
+    awayScore = currentScore + finalScore.Away;
+    inningScoreTotal.push(`Inning ${i + 1} Score: Home ${currentScore.Home}  -  Away ${currentScore.Away}`);
+    
+  }
+  return inningScoreTotal;
 }
+
+console.log(getInningScore(finalScore(inning, 1)));
+
+
 /* Task 5: scoreboard()
 Use the scoreboard function below to do the following:
   1. Receive a callback function, that you create, called `getInningScore`
@@ -133,6 +152,11 @@ Use the scoreboard function below to do the following:
   "This game will require extra innings: Away 12 - Home 12"
 ]  
   */
+
+
+
+
+
 
 
 function scoreboard(/* CODE HERE */) {
