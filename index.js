@@ -100,16 +100,13 @@ console.log(finalScore(inning, 9));
 // it should return an object with with a score for home and a score for away that that populates from invoking the inning callback. */
 
 function getInningScore(){
-  let inningScoreTotal = [];
+  let inningScoreTotal = {};
   let homeScore = 0;
   let awayScore = 0;
-  for(let i = 0; i < 9; i ++){
-    let currentScore = finalScore();
-    homeScore == currentScore + finalScore.Home;
-    awayScore == currentScore + finalScore.Away;
-    inningScoreTotal.push(`Inning ${i + 1} Score: Home ${currentScore.Home}  -  Away ${currentScore.Away}`);
-    
-  }
+  let currentScore = finalScore();
+  homeScore == currentScore + finalScore.Home;
+  awayScore == currentScore + finalScore.Away;
+  inningScoreTotal = {Home: currentScore.Home ,  Away: currentScore.Away};
   return inningScoreTotal;
 }
 
@@ -162,23 +159,21 @@ Use the scoreboard function below to do the following:
 
 
  function scoreboard(){
-  let inningScoreTotal = [];
+  let inningScoreTotal = {};
   let homeScore = 0;
   let awayScore = 0;
   for(let i = 0; i < 9; i ++){
     let currentScore = finalScore();
     homeScore = currentScore + finalScore.Home;
     awayScore = currentScore + finalScore.Away;
-    inningScoreTotal.push(`Away ${awayScore} - Home ${homeScore}}`);
-    
+    inningScoreTotal(`Away: ${awayScore} - Home: ${homeScore}}`);
   }
   if(homeScore === awayScore){
-    `This game will require extra innings: Away ${awayScore} - ${homeScore}`
+    `This game will require extra innings: Away: ${awayScore} - Home: ${homeScore}`
  }
   return inningScoreTotal();
 }
 
-console.log(getInningScore());
 
 
 
