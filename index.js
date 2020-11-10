@@ -78,14 +78,20 @@ For example: invoking finalScore(inning, 9) might return this object:
 }
 */ 
 
-function finalScore(inningCB){
-  var inningCB = inning;
-  return {
-    Home: inningCB(inning),
-    Away: inningCB(inning),
-  }
-}
 
+function finalScore(inningCB, num){
+  let home = 0;
+  let away = 0;
+  for(let i = 0; i < num; i++){
+   home += inningCB();
+   away += inningCB();
+  }
+  return {
+    "Home": home,
+    "Away": away
+  }; 
+}
+console.log(finalScore(inning, 9));
 
 
 /* Task 4: 
@@ -93,14 +99,14 @@ function finalScore(inningCB){
 // the function should take the inning function as an argument 
 // it should return an object with with a score for home and a score for away that that populates from invoking the inning callback. */
 
-function getInningScore(inningCB, ){
+function getInningScore(){
   let inningScoreTotal = [];
   let homeScore = 0;
   let awayScore = 0;
   for(let i = 0; i < 9; i ++){
     let currentScore = finalScore();
-    homeScore = currentScore + finalScore.Home;
-    awayScore = currentScore + finalScore.Away;
+    homeScore == currentScore + finalScore.Home;
+    awayScore == currentScore + finalScore.Away;
     inningScoreTotal.push(`Inning ${i + 1} Score: Home ${currentScore.Home}  -  Away ${currentScore.Away}`);
     
   }
@@ -108,6 +114,7 @@ function getInningScore(inningCB, ){
 }
 
 console.log(getInningScore(finalScore(inning, 1)));
+
 
 
 /* Task 5: scoreboard()
@@ -154,15 +161,24 @@ Use the scoreboard function below to do the following:
   */
 
 
-
-
-
-
-
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+ function scoreboard(){
+  let inningScoreTotal = [];
+  let homeScore = 0;
+  let awayScore = 0;
+  for(let i = 0; i < 9; i ++){
+    let currentScore = finalScore();
+    homeScore = currentScore + finalScore.Home;
+    awayScore = currentScore + finalScore.Away;
+    inningScoreTotal.push(`Away ${awayScore} - Home ${homeScore}}`);
+    
+  }
+  if(homeScore === awayScore){
+    `This game will require extra innings: Away ${awayScore} - ${homeScore}`
+ }
+  return inningScoreTotal();
 }
 
+console.log(getInningScore());
 
 
 
