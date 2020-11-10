@@ -43,6 +43,8 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+  closure is a way of adding multiple functions together and referencing surrounding functions.3
+  
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -64,8 +66,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+    at the return statement, because the math equasion never changes but the name could
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+    the name could change but the sentence that logs always stays the same with varying data inputs
 c. What is the lexical scope of `newRoll`? 
+    new roll is located within the personalDice function, which is its parent.
 
 ### Task 2c - Exit Ticket
 
